@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Exploradores del Sistema Solar</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(#07162f, #123c69);
+      color: white;
+    }
+
+    header {
+      text-align: center;
+      padding: 40px 20px;
+    }
+
+    header h1 {
+      font-size: 42px;
+      margin-bottom: 10px;
+    }
+
+    header p {
+      font-size: 20px;
+    }
+
+    .contenedor {
+      max-width: 1100px;
+      margin: auto;
+      padding: 20px;
+    }
+
+    .tarjeta {
+      background: white;
+      color: #1b2a41;
+      border-radius: 20px;
+      padding: 25px;
+      margin: 20px 0;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+    }
+
+    .tarjeta h2 {
+      color: #123c69;
+    }
+
+    .planetas {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+    }
+
+    .planeta {
+      background: #f2f6ff;
+      border-radius: 18px;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .planeta span {
+      font-size: 45px;
+    }
+
+    .boton {
+      display: inline-block;
+      background: #ffd166;
+      color: #1b2a41;
+      padding: 14px 24px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: bold;
+      margin-top: 15px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 25px;
+      background: rgba(0,0,0,0.3);
+      margin-top: 30px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>🚀 Exploradores del Sistema Solar</h1>
+    <p>Aprende sobre los planetas con pensamiento, descubrimiento e inteligencia artificial</p>
+    <a class="boton" href="#chatbot">Comenzar aventura</a>
+  </header>
+
+  <main class="contenedor">
+
+    <section class="tarjeta">
+      <h2>🎯 Objetivo del proyecto</h2>
+      <p>
+        Favorecer el aprendizaje activo mediante el pensamiento, la exploración y el descubrimiento,
+        utilizando una página web educativa y un chatbot sobre el Sistema Solar.
+      </p>
+    </section>
+
+    <section class="tarjeta">
+      <h2>🪐 Conoce los planetas</h2>
+
+      <div class="planetas">
+        <div class="planeta">
+          <span>☿️</span>
+          <h3>Mercurio</h3>
+          <p>El planeta más cercano al Sol.</p>
+        </div>
+
+        <div class="planeta">
+          <span>♀️</span>
+          <h3>Venus</h3>
+          <p>Un planeta muy caliente y brillante.</p>
+        </div>
+
+        <div class="planeta">
+          <span>🌍</span>
+          <h3>Tierra</h3>
+          <p>Nuestro hogar en el espacio.</p>
+        </div>
+
+        <div class="planeta">
+          <span>♂️</span>
+          <h3>Marte</h3>
+          <p>Conocido como el planeta rojo.</p>
+        </div>
+
+        <div class="planeta">
+          <span>♃</span>
+          <h3>Júpiter</h3>
+          <p>El planeta más grande del Sistema Solar.</p>
+        </div>
+
+        <div class="planeta">
+          <span>♄</span>
+          <h3>Saturno</h3>
+          <p>Famoso por sus anillos.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="tarjeta" id="chatbot">
+      <h2>🤖 Chatbot educativo</h2>
+      <p>
+        Aquí irá el chatbot que responderá preguntas sobre los planetas,
+        el Sol, la Luna y el universo.
+      </p>
+
+      <div class="planeta">
+        <h3>Pregunta al chatbot</h3>
+        <p>Ejemplo: ¿Cuál es el planeta más grande?</p>
+        <a class="boton" href="#">Abrir chatbot</a>
+      </div>
+    </section>
+
+    <section class="tarjeta">
+      <h2>💻 Repositorio de código</h2>
+      <p><strong>Herramienta utilizada:</strong> GitHub</p>
+      <p>
+        Repositorio que contiene la estructura del proyecto web educativo,
+        los contenidos sobre los planetas y la base del chatbot.
+      </p>
+    </section>
+
+    <section class="tarjeta">
+      <h2>🌐 Despliegue en producción</h2>
+      <p><strong>Herramienta utilizada:</strong> Vercel</p>
+      <p>
+        Aplicación publicada en entorno real, accesible mediante URL,
+        que permite interactuar con el chatbot educativo.
+      </p>
+    </section>
+
+  </main>
+
+  <footer>
+    Proyecto educativo sobre el Sistema Solar · Curso 2026
+  </footer>
+
+</body>
+</html>

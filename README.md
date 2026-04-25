@@ -1,10 +1,13 @@
 # Chatbot Educativo de los Planetas
 
+## Etapa educativa
+Educación Primaria
+
 ## Objetivo
-Aprendizaje activo mediante pensamiento y descubrimiento.
+Fomentar el aprendizaje activo mediante el pensamiento y el descubrimiento en el alumnado de Educación Primaria.
 
 ## Descripción
-Proyecto educativo sobre los planetas que incluye un chatbot para interactuar con el alumnado.
+Proyecto educativo sobre los planetas dirigido a alumnos de Educación Primaria. Incluye un chatbot interactivo que permite al alumnado aprender de forma dinámica sobre el sistema solar.
 
 ## Tecnologías utilizadas
 - HTML
@@ -12,4 +15,8 @@ Proyecto educativo sobre los planetas que incluye un chatbot para interactuar co
 - JavaScript
 - IA (chatbot)
 
-## Autor SILVIA
+## Aplicación en el aula
+Este recurso se puede utilizar en el área de Ciencias Sociales o Ciencias Naturales para trabajar el sistema solar de forma motivadora.
+
+## Autora
+Silvia

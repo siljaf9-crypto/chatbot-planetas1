@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AstroBot Pro</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+<style>
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #1d2671, #6a11cb, #2575fc);
+  color: white;
+}
+
+header {
+  text-align: center;
+  padding: 50px 20px;
+}
+
+header h1 {
+  font-size: 42px;
+  margin-bottom: 10px;
+}
+
+header p {
+  font-size: 20px;
+}
+
+.boton {
+  background: #ffde59;
+  color: #1d2671;
+  padding: 14px 28px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 700;
+  display: inline-block;
+  margin-top: 20px;
+}
+
+.contenedor {
+  max-width: 1100px;
+  margin: auto;
+  padding: 20px;
+}
+
+.tarjeta {
+  background: white;
+  color: #263238;
+  border-radius: 25px;
+  padding: 30px;
+  margin: 25px 0;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+}
+
+.tarjeta h2 {
+  color: #5e35b1;
+}
+
+.planetas {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.planeta {
+  background: #f1f8ff;
+  border-radius: 20px;
+  padding: 20px;
+  text-align: center;
+  border: 3px solid #b3e5fc;
+}
+
+.planeta span {
+  font-size: 50px;
+}
+
+.chat-box {
+  background: #f1f8ff;
+  border: 3px solid #64b5f6;
+  border-radius: 20px;
+  padding: 20px;
+  color: #263238;
+  text-align: center;
+}
+
+.marcador {
+  background: #fff8e1;
+  border: 3px solid #ffd54f;
+  border-radius: 20px;
+  padding: 15px;
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.mensajes {
+  background: white;
+  border-radius: 15px;
+  padding: 15px;
+  height: 270px;
+  overflow-y: auto;
+  text-align: left;
+  margin-bottom: 15px;
+  border: 2px solid #bbdefb;
+}
+
+.mensajes p {
+  padding: 10px;
+  border-radius: 12px;
+  margin: 8px 0;
+}
+
+.alumno {
+  background: #fff3cd;
+}
+
+.bot {
+  background: #e3f2fd;
+}
+
+input {
+  width: 90%;
+  padding: 14px;
+  border-radius: 20px;
+  border: 2px solid #64b5f6;
+  font-size: 16px;
+  font-family: 'Poppins', sans-serif;
+  margin-bottom: 10px;
+}
+
+button {
+  background: linear-gradient(45deg, #ff6f00, #ffca28);
+  color: white;
+  border: none;
+  padding: 14px 22px;
+  border-radius: 30px;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  margin: 5px;
+}
+
+button:hover {
+  transform: scale(1.05);
+}
+
+.rapidas button {
+  background: #7e57c2;
+  font-size: 14px;
+}
+
+footer {
+  text-align: center;
+  padding: 25px;
+  background: rgba(0,0,0,0.35);
+  margin-top: 30px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>🚀 AstroBot Pro</h1>
+  <p>Chatbot educativo del Sistema Solar para 4º de Primaria</p>
+  <a href="#chatbot" class="boton">Comenzar aventura</a>
+</header>
+
+<main class="contenedor">
+
+<section class="tarjeta">
+  <h2>🎯 Objetivo</h2>
+  <p>
+    Aprender sobre el Sistema Solar mediante preguntas, descubrimiento,
+    voz y un juego de puntos.
+  </p>
+</section>
+
+<section class="tarjeta">
+  <h2>🪐 Planetas del Sistema Solar</h2>
+
+  <div class="planetas">
+    <div class="planeta"><span>☿️</span><h3>Mercurio</h3><p>El más cercano al Sol.</p></div>
+    <div class="planeta"><span>♀️</span><h3>Venus</h3><p>Muy caliente y brillante.</p></div>
+    <div class="planeta"><span>🌍</span><h3>Tierra</h3><p>Nuestro planeta.</p></div>
+    <div class="planeta"><span>🔴</span><h3>Marte</h3><p>El planeta rojo.</p></div>
+    <div class="planeta"><span>🟠</span><h3>Júpiter</h3><p>El más grande.</p></div>
+    <div class="planeta"><span>🪐</span><h3>Saturno</h3><p>Famoso por sus anillos.</p></div>
+    <div class="planeta"><span>🔵</span><h3>Urano</h3><p>Frío y azul verdoso.</p></div>
+    <div class="planeta"><span>🔷</span><h3>Neptuno</h3><p>El más lejano.</p></div>
+  </div>
+</section>
+
+<section class="tarjeta" id="chatbot">
+  <h2>🤖 Chatbot con voz y juego</h2>
+
+  <div class="chat-box">
+
+    <div class="marcador">
+      ⭐ Puntos: <span id="puntos">0</span>
+    </div>
+
+    <div id="mensajes" class="mensajes">
+      <p class="bot"><b>🤖 AstroBot:</b> ¡Hola! Pregúntame sobre el Sistema Solar. Cada buena pregunta suma puntos.</p>
+    </div>
+
+    <input 
+      id="pregunta" 
+      placeholder="Escribe tu pregunta..."
+      onkeydown="if(event.key==='Enter') responder()"
+    >
+
+    <br>
+
+    <button onclick="responder()">🚀 Preguntar</button>
+    <button onclick="leerUltimaRespuesta()">🔊 Repetir voz</button>
+    <button onclick="reiniciarJuego()">🔄 Reiniciar puntos</button>
+
+    <div class="rapidas">
+      <p><b>Preguntas rápidas:</b></p>
+      <button onclick="preguntaRapida('¿Cuál es el planeta más grande?')">Planeta más grande</button>
+      <button onclick="preguntaRapida('¿Qué planeta tiene anillos?')">Anillos</button>
+      <button onclick="preguntaRapida('¿Qué es el Sol?')">El Sol</button>
+      <button onclick="preguntaRapida('¿Qué es la Luna?')">La Luna</button>
+      <button onclick="preguntaRapida('¿Por qué Marte es rojo?')">Marte rojo</button>
+    </div>
+
+  </div>
+</section>
+
+<section class="tarjeta">
+  <h2>💻 Tecnologías utilizadas</h2>
+  <p>
+    HTML, CSS, JavaScript, GitHub, Vercel y chatbot educativo con voz.
+  </p>
+</section>
+
+</main>
+
+<footer>
+  Proyecto educativo para 4º de Primaria · Sistema Solar · 2026
+</footer>
+
+<script>
+let puntos = 0;
+let ultimaRespuesta = "¡Hola! Pregúntame sobre el Sistema Solar.";
+
+function hablar(texto) {
+  window.speechSynthesis.cancel();
+  let voz = new SpeechSynthesisUtterance(texto);
+  voz.lang = "es-ES";
+  voz.rate = 0.9;
+  voz.pitch = 1.1;
+  window.speechSynthesis.speak(voz);
+}
+
+function leerUltimaRespuesta() {
+  hablar(ultimaRespuesta);
+}
+
+function sumarPunto() {
+  puntos++;
+  document.getElementById("puntos").innerText = puntos;
+}
+
+function reiniciarJuego() {
+  puntos = 0;
+  document.getElementById("puntos").innerText = puntos;
+  ultimaRespuesta = "Puntos reiniciados. ¡Comenzamos otra vez!";
+  añadirMensaje("🤖 AstroBot", ultimaRespuesta, "bot");
+  hablar(ultimaRespuesta);
+}
+
+function preguntaRapida(texto) {
+  document.getElementById("pregunta").value = texto;
+  responder();
+}
+
+function añadirMensaje(nombre, texto, clase) {
+  let mensajes = document.getElementById("mensajes");
+  mensajes.innerHTML += "<p class='" + clase + "'><b>" + nombre + ":</b> " + texto + "</p>";
+  mensajes.scrollTop = mensajes.scrollHeight;
+}
+
+function responder() {
+  let texto = document.getElementById("pregunta").value.trim();
+  let pregunta = texto.toLowerCase();
+  let respuesta = "";
+
+  if (texto === "") {
+    respuesta = "Escribe una pregunta para poder ayudarte.";
+  }
+  else if (pregunta.includes("sol")) {
+    respuesta = "El Sol es una estrella. Nos da luz y calor, y está en el centro del Sistema Solar.";
+    sumarPunto();
+  }
+  else if (pregunta.includes("tierra")) {
+    respuesta = "La Tierra es nuestro planeta. Tiene agua, aire y vida.";
+    sumarPunto();
+  }
+  else if (pregunta.includes("marte") || pregunta.includes("rojo")) {
+    respuesta = "Marte se llama planeta rojo porque su superficie tiene un color rojizo.";
+    sumarPunto();
+  }
+  else if (pregunta.includes("jupiter") || pregunta.includes("júpiter") || pregunta.includes("grande")) {
+    respuesta = "Júpiter es el planeta más grande del Sistema Solar.";
+    sumarPunto();
+  }
+  else if (pregunta.includes("saturno") || pregunta.includes("anillos")) {
+    respuesta = "Saturno es famoso por sus anillos, formados por hielo y rocas.";
+    sumarPunto();
+  }
+  else if (pregunta.includes("mercurio") || pregunta.includes("cercano")) {
+    respuesta = "Mercurio es el planeta más cercano al Sol.";
+    sumarPunto();
+  }
+  else if (pregunta.includes("venus")) {
+    respuesta = "Venus es un planeta muy caliente y brillante.";
+    sumarPunto();
+  }
+  else if (pregunta.includes("urano")) {
+    respuesta = "Urano es un planeta frío y gira de una forma muy inclinada.";
+    sumarPunto();
+  }
+  else if (pregunta.includes("neptuno") || pregunta.includes("lejano")) {
+    respuesta = "Neptuno es el planeta más lejano del Sol.";
+    sumarPunto();
+  }
+  else if (pregunta.includes("luna")) {
+    respuesta = "La Luna no es un planeta. Es el satélite natural de la Tierra.";
+    sumarPunto();
+  }
+  else if (pregunta.includes("vida")) {
+    respuesta = "La Tierra es el único planeta del Sistema Solar donde sabemos que hay vida.";
+    sumarPunto();
+  }
+  else if (pregunta.includes("agua")) {
+    respuesta = "La Tierra tiene agua líquida, algo muy importante para la vida.";
+    sumarPunto();
+  }
+  else if (pregunta.includes("planeta")) {
+    respuesta = "Un planeta es un cuerpo celeste que gira alrededor de una estrella.";
+    sumarPunto();
+  }
+  else {
+    respuesta = "Buena pregunta. Prueba con: Sol, Tierra, Marte, Júpiter, Saturno, Luna, anillos o planeta.";
+  }
+
+  ultimaRespuesta = respuesta;
+
+  añadirMensaje("👧 Alumno/a", texto, "alumno");
+  añadirMensaje("🤖 AstroBot", respuesta, "bot");
+
+  document.getElementById("pregunta").value = "";
+  hablar(respuesta);
+}
+</script>
+
+</body>
+</html>
